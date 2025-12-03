@@ -1,0 +1,35 @@
+@startuml UseCase_TaskManager  
+left to right direction
+
+actor Manager as "Менеджер"
+actor Employee as "Сотрудник"
+ rectangle "TaskManager" {
+ usecase UC1 as "Авторизация / Вход"
+  usecase UC2 as "Создать задачу"
+  usecase UC3 as "Редактировать задачу"
+  usecase UC4 as "Назначить задачу"
+  usecase UC5 as "Просмотреть задачи"
+  usecase UC6 as "Изменить статус"
+  usecase UC7 as "Добавить комментарий\nили вложение"
+  usecase UC8 as "Просмотр истории"
+  usecase UC9 as "Уведомления"
+}
+Manager --> UC1
+Employee --> UC1
+
+Manager --> UC2
+Manager --> UC3
+Manager --> UC4
+Manager --> UC8
+
+
+Employee --> UC5
+Employee --> UC6
+Employee --> UC7
+Employee --> UC3 
+Employee --> UC2
+ 
+UC4 ..> UC9 : <<include>>
+UC2 ..> UC9 : <<include>>
+UC3 ..> UC8 : <<include>>
+@enduml
