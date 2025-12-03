@@ -1,0 +1,2 @@
+# Individual_Desktop
+IndividualWork_Planificarea_Aplicatiilor_Desktop
